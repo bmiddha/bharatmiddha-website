@@ -3,6 +3,13 @@
 @import 'home'
 @import 'resume'
 
+* 
+	box-sizing: border-box
+
+*:before,
+*:after 
+	box-sizing: border-box
+
 body
 	margin: 0
 	font-family: $body-typeface
@@ -42,7 +49,7 @@ a
 
 .main
 	width: 100%
-	padding: 100px 0
+	padding: 150px 0
 
 .wrapper
 	width: 90%
@@ -62,52 +69,7 @@ a
 		i
 			transform: scale(1.11)
 
-div.mainNav
-	padding: 30px 0
-	background-color: $body-background
-	border-bottom: 1px solid $theme-color-main
-	h1
-		display: inline-block
-		border: none
-		margin: 25px
-		font-family: $logo-typeface
-		
-		display: inline-block
-		border: none
-		margin: 25px
-		font-family: $logo-typeface
-	nav
-		li
-			list-style: none
-			display: inline-block
-			margin: 0 20px
-
-// div.mainNavSide
-// 	background-color: $body-background
-// 	padding: 30px 0
-// 	border-bottom: 1px solid $theme-color-main
-// 	width: 200px
-// 	height: 100vh
-// 	position: absolute
-// 	z-index: 10
-// 	h1
-// 		font-family: $logo-typeface
-// 		display: inline-block
-// 		border: none
-// 		margin: 25px
-// 		position: absolute
-// 		left: 0
-// 		top: 0
-		
-// 	nav
-// 		margin-top: 50px
-
-// 		li
-// 			list-style: none
-// 			margin: 20px 10px
-
 footer.mainFooter
-	background-color: $body-background
 	text-align: center
 	padding: 30px
 	border-bottom: 1px solid $theme-color-main
@@ -117,3 +79,64 @@ article
 	padding: 20px
 	margin: 30px 0
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2)
+
+.mainNavContainer
+	.topBar
+		width: 100%
+		background-color: $theme-color-main
+		height: 100px
+		position: fixed
+		top: 0
+	.logo
+		font-family: $logo-typeface
+		font-size: 40px
+		color: white
+		display: inline-block
+		border: none
+		cursor: default
+		position: fixed
+		top: 0
+		z-index: 100
+		left: 100px
+		a:hover
+			color: inherit
+	.menuIcon
+		font-size: 30px
+		padding: 10px
+		margin: 25px
+		cursor: pointer
+		z-index: 100
+		position: fixed
+		top: 0
+		left: 0
+		transition: color 0.5s
+	#menuToggle
+		display: none
+		z-index: 100
+		position: fixed
+		top: 0
+		left: 0
+	#menuToggle[type=checkbox]:checked ~ .menuIcon
+		color: $theme-color-main
+	#menuToggle[type=checkbox]:checked ~ .mainNav
+		margin-left: 0
+		overflow: hidden
+	.mainNav
+		width: 300px
+		margin-left: -300px
+		transition: margin-left 0.5s
+		user-select: none
+		background: rgba(0,0,0,0.8)
+		min-height: 400px
+		height: 100vh
+		color: white
+		position: fixed
+		top: 0
+		left: 0
+		padding-top: 100px
+		li
+			@extend .btn
+			list-style: none
+			margin-left: 30px
+			padding: 10px
+			display: block

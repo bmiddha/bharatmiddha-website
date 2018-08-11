@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada|Raleway");
-#resume .btn {
+#resume .btn, #resume .mainNavContainer .mainNav li, .mainNavContainer .mainNav #resume li {
     font-size: 20px;
     padding: 0; }
 
@@ -27,6 +27,13 @@
     bottom: 0;
     z-index: 1;
     font-weight: 900; }
+
+* {
+    box-sizing: border-box; }
+
+*:before,
+*:after {
+    box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -70,45 +77,26 @@ a {
 
 .main {
     width: 100%;
-    padding: 100px 0; }
+    padding: 150px 0; }
 
 .wrapper {
     width: 90%;
     max-width: 900px;
     margin: 0 auto; }
 
-.btn {
+.btn, .mainNavContainer .mainNav li {
     font-size: 30px;
     display: inline-block;
     padding: 10px;
     text-decoration: none; }
-    .btn i {
+    .btn i, .mainNavContainer .mainNav li i {
         transition: transform 0.3s; }
-    .btn:hover {
+    .btn:hover, .mainNavContainer .mainNav li:hover {
         text-decoration: none; }
-        .btn:hover i {
+        .btn:hover i, .mainNavContainer .mainNav li:hover i {
             transform: scale(1.11); }
 
-div.mainNav {
-    padding: 30px 0;
-    background-color: #fff;
-    border-bottom: 1px solid #2185BF; }
-    div.mainNav h1 {
-        display: inline-block;
-        border: none;
-        margin: 25px;
-        font-family: "Montserrat Subrayada", sans-serif;
-        display: inline-block;
-        border: none;
-        margin: 25px;
-        font-family: "Montserrat Subrayada", sans-serif; }
-    div.mainNav nav li {
-        list-style: none;
-        display: inline-block;
-        margin: 0 20px; }
-
 footer.mainFooter {
-    background-color: #fff;
     text-align: center;
     padding: 30px;
     border-bottom: 1px solid #2185BF; }
@@ -118,3 +106,68 @@ article {
     padding: 20px;
     margin: 30px 0;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+
+.mainNavContainer .topBar {
+    width: 100%;
+    background-color: #2185BF;
+    height: 100px;
+    position: fixed;
+    top: 0; }
+
+.mainNavContainer .logo {
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-size: 40px;
+    color: white;
+    display: inline-block;
+    border: none;
+    cursor: default;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    left: 100px; }
+    .mainNavContainer .logo a:hover {
+        color: inherit; }
+
+.mainNavContainer .menuIcon {
+    font-size: 30px;
+    padding: 10px;
+    margin: 25px;
+    cursor: pointer;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: color 0.5s; }
+
+.mainNavContainer #menuToggle {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0; }
+
+.mainNavContainer #menuToggle[type=checkbox]:checked ~ .menuIcon {
+    color: #2185BF; }
+
+.mainNavContainer #menuToggle[type=checkbox]:checked ~ .mainNav {
+    margin-left: 0;
+    overflow: hidden; }
+
+.mainNavContainer .mainNav {
+    width: 300px;
+    margin-left: -300px;
+    transition: margin-left 0.5s;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.8);
+    min-height: 400px;
+    height: 100vh;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px; }
+    .mainNavContainer .mainNav li {
+        list-style: none;
+        margin-left: 30px;
+        padding: 10px;
+        display: block; }
