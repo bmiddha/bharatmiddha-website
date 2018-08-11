@@ -140,3 +140,26 @@ article
 			margin-left: 30px
 			padding: 10px
 			display: block
+
+.externalLink
+	&:after
+		content: "\f35d"
+		font-family: 'Font Awesome 5 Free'
+		font-weight: 900
+		font-size: 10px
+		margin: 10px
+		vertical-align: text-top
+
+
+body::-webkit-scrollbar 
+	width: 10px
+	background-color: #F5F5F5
+ 
+body::-webkit-scrollbar-track 
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+	background-color: #F5F5F5
+
+ 
+body::-webkit-scrollbar-thumb 
+	background-color: $theme-color-main
+	background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .2) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%,transparent 75%,transparent)
