@@ -45,7 +45,7 @@ body {
     background-color: #fff; }
     body:before {
         content: " ";
-        background-image: url(../images/bean.jpg);
+        background-image: url(../images/bean.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
