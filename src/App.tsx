@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ResumePage from './pages/ResumePage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
+import BlogPage from './pages/BlogPage';
 
-const App: React.FC = () => {
+export const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <NavBar />
+        <Switch>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/projects">
+            <ProjectsPage />
+          </Route>
+          <Route path="/resume">
+            <ResumePage />
+          </Route>
+          <Route path="/blog">
+            <BlogPage />
+          </Route>
+          <Route path="/home">
+            <HomePage />
+          </Route>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
+          </Route>
+        </Switch>
+        <Footer />
+      </>
+    </Router>
   );
-}
+};
 
 export default App;
