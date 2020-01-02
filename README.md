@@ -7,6 +7,8 @@
 [![docker-cd-master](https://img.shields.io/github/workflow/status/bmiddha/bharatmiddha-website/docker-cd-master?label=build:%20docker-cd-master)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3A%22docker-cd-master%22)
 [![License](https://img.shields.io/github/license/bmiddha/bharatmiddha-website)](https://github.com/bmiddha/bharatmiddha-website/blob/master/LICENSE)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b05cf272-4fc5-4726-8648-4d76c36c1cce/deploy-status)](https://app.netlify.com/sites/optimistic-spence-a21275/deploys)
+
 Personal website for [Bharat Middha](https://github.com/bmiddha).
 
 ## Getting Started
