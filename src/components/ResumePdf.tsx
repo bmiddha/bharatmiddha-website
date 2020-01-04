@@ -102,7 +102,6 @@ export const ResumePdf: FC = () => {
     skills,
     education,
     experience,
-    projects,
     volunteer,
     associations
   } = ResumeData;
@@ -200,29 +199,6 @@ export const ResumePdf: FC = () => {
               <Text style={styles.h3}>Volunteer Work</Text>
               {ViewMapper(volunteer)}
             </View>
-            {/* <View style={styles.section}>
-              <Text style={styles.h3}>Featured Projects</Text>
-              {projects.map((e, key) => (
-                <View key={`${key}-${e.name}`}>
-                  <Text style={styles.h4}>{e.name}</Text>
-                  <Text style={styles.h5}>{e.link}</Text>
-                  <View style={styles.inlineList}>
-                    {e.technologies.map((s, key) => (
-                      <Text style={styles.inlineLi} key={`${key}-${s}`}>
-                        {s}
-                      </Text>
-                    ))}
-                  </View>
-                  <View style={styles.list}>
-                    {e.points.map((s, key) => (
-                      <Text style={styles.li} key={`${key}-${s}`}>
-                        {s}
-                      </Text>
-                    ))}
-                  </View>
-                </View>
-              ))}
-            </View> */}
           </View>
         </Page>
       </Document>

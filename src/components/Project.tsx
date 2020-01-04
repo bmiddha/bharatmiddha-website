@@ -88,14 +88,13 @@ export type Repository = {
 };
 
 export const Project: FC<Repository> = props => {
-  console.log(props);
   const toDays = (timestamp: string): string => {
     const ago = Math.trunc((+new Date() - +new Date(timestamp)) / 3600000 / 24);
     return ago > 1 ? `${ago} days ago` : ago === 1 ? 'yesterday' : 'today';
   };
   return (
     <div>
-      <Card className="mt-4" style={{ width: '300px' }}>
+      <Card className="mt-4" style={{ width: '300px', height: 'calc(100% - 30px)' }}>
         <CardBody>
           <CardTitle>
             <CardLink

@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 export const AboutPage: FC = () => {
   return (
     <Container>
-      <h1 className="my-4">About</h1>
+      <h1 className="my-4 wack">About</h1>
       <ul>
         <li>Full Stack Developer</li>
         <li>

@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 export const BlogPage: FC = () => {
   return (
     <Container>
-      <h1 className="my-4">Blog</h1>
+      <h1 className="my-4 wack">Blog</h1>
     </Container>
   );
 };

@@ -1,7 +1,18 @@
-body {
-  min-height: 100vh;
-}
-
 .wack::before {
   content: '/';
+}
+.inline-list {
+  list-style: none;
+  padding: 0;
+}
+.inline-list > li {
+  display: inline;
+}
+.inline-list > li::before {
+  content: '|';
+  padding: 10px;
+}
+.inline-list > li:first-child::before {
+  content: '';
+  padding: 0;
 }

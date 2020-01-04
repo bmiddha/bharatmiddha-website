@@ -2,7 +2,7 @@ export const ResumeData = {
   name: 'Bharat Middha',
   location: 'Chicago, IL',
   email: 'me@bharatmiddha.com',
-  summary: 'Seeking full-time developer positions',
+  summary: 'Full Stack Developer, DevOps Engineer, Systems Administrator',
   links: {
     github: 'https://github.com/bmiddha',
     linkedin: 'https://linkedin.com/in/bmiddha',
@@ -97,19 +97,6 @@ export const ResumeData = {
         'Worked with various APIs for devices such as microphones and Z-Wave devices.'
       ]
     }
-    // {
-    //   organization: 'University of Illinois at Chicago | UIC Tech Center',
-    //   location: 'Chicago, IL',
-    //   position: 'Retail Sales Aide',
-    //   start: 'May 2018',
-    //   end: 'September 2019',
-    //   points: [
-    //     'Customer Service.',
-    //     'Marketing and inventory of products.',
-    //     'Diagnosing issues with customer products.',
-    //     'Performing repairs on customer computers.'
-    //   ]
-    // }
   ],
   associations: [
     {

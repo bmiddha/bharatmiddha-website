@@ -5,7 +5,7 @@ import { Container } from 'reactstrap';
 export const ProjectsPage: FC = () => {
   return (
     <Container>
-      <h1 className="my-4">Projects</h1>
+      <h1 className="my-4 wack">Projects</h1>
       <ProjectsList />
     </Container>
   );
