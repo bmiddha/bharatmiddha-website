@@ -89,8 +89,10 @@ export type Repository = {
 
 export const Project: FC<Repository> = props => {
   console.log(props);
-  const toDays = (timestamp: string): number =>
-    Math.trunc((+new Date() - +new Date(timestamp)) / 3600000 / 24);
+  const toDays = (timestamp: string): string => {
+    const ago = Math.trunc((+new Date() - +new Date(timestamp)) / 3600000 / 24);
+    return ago > 1 ? `${ago} days ago` : ago === 1 ? 'yesterday' : 'today';
+  };
   return (
     <div>
       <Card className="mt-4" style={{ width: '300px' }}>
@@ -130,9 +132,9 @@ export const Project: FC<Repository> = props => {
           <CardText>{props.description}</CardText>
         </CardBody>
         <CardFooter className="text-muted">
-          Last update: {toDays(props.updated_at)} days ago.
+          Last updated {toDays(props.updated_at)}.
           <br />
-          Last push: {toDays(props.pushed_at)} days ago.
+          Last pushed {toDays(props.pushed_at)}.
         </CardFooter>
       </Card>
     </div>
