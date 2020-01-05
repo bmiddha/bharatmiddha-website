@@ -18,6 +18,7 @@
     "middha",
     "qemu",
     "reactstrap",
+    "repos",
     "systemd"
   ]
 }

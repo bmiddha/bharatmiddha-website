@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import BlogPage from './pages/BlogPage';
+import DownloadsPage from './pages/DownloadsPage';
 
 export const App: FC = () => {
   return (
@@ -17,6 +18,9 @@ export const App: FC = () => {
         <Switch>
           <Route path="/about">
             <AboutPage />
+          </Route>
+          <Route path="/downloads">
+            <DownloadsPage />
           </Route>
           <Route path="/projects">
             <ProjectsPage />

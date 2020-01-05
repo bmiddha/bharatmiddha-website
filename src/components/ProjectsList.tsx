@@ -13,11 +13,16 @@ export const ProjectsList: FC = () => {
   }, []);
 
   return (
-    <CardDeck>
-      {repos.map((e, key) => (
-        <Project key={key} {...e} />
-      ))}
-    </CardDeck>
+    <>
+      <p className="lead">
+        Data fetched from <a href="https://developer.github.com/v3/">GitHub API.</a>
+      </p>
+      <CardDeck>
+        {repos.map((e, key) => (
+          <Project key={key} {...e} />
+        ))}
+      </CardDeck>
+    </>
   );
 };
 
