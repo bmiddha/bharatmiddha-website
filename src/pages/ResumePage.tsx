@@ -12,10 +12,8 @@ export const ResumePage: FC = () => {
           <h1 className="wack">Resume</h1>
         </Col>
         <Col>
-          <div className="clearfix">
-            <div className="float-right">
-              <ResumePdf />
-            </div>
+          <div className="resume-align-right">
+            <ResumePdf />
           </div>
         </Col>
       </Row>

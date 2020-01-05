@@ -5,26 +5,12 @@ export const AboutPage: FC = () => {
   return (
     <Container>
       <h1 className="my-4 wack">About</h1>
-      <ul>
-        <li>Full Stack Developer</li>
-        <li>
-          Computer Science student at{' '}
-          <a href="https://cs.uic.edu" target="_blank" rel="noopener noreferrer">
-            University of Illinois at Chicago
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://careers.microsoft.com/students"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Microsoft
-          </a>{' '}
-          Intern
-        </li>
-        <li>Ametur Musician</li>
-      </ul>
+      <article>
+        <h2>About me</h2>
+      </article>
+      <article>
+        <h2>About this website</h2>
+      </article>
     </Container>
   );
 };

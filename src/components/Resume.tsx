@@ -35,7 +35,7 @@ export const Resume: FC = () => {
             <h4>{e.organization ? e.organization : ''}</h4>
             <h5>{e.position ? e.position : ''}</h5>
           </Col>
-          <Col md={'auto'} className="resume-align-right">
+          <Col lg={'auto'} className="resume-align-right">
             <h5>{e.location ? e.location : ''}</h5>
             <p>{`${e.start ? e.start : ''} - ${e.end ? e.end : ''}`}</p>
           </Col>

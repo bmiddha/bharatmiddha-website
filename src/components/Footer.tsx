@@ -10,7 +10,7 @@ export const Footer: FC = () => {
         <p>
           <FontAwesomeIcon icon={faCode} /> with <FontAwesomeIcon icon={faHeart} /> |{' '}
           <a href="https://github.com/bmiddha/bharatmiddha-website" className="text-white">
-            <FontAwesomeIcon icon={faGithub} />: bmiddha/bharatmiddha-website
+            <FontAwesomeIcon icon={faGithub} /> bmiddha/bharatmiddha-website
           </a>
         </p>
         <p>Copyright &copy; {new Date().getFullYear()} Bharat Middha</p>
