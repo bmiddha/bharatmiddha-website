@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Document, Page, StyleSheet, Text, View, Font, PDFViewer } from '@react-pdf/renderer';
+import { Document, Page, StyleSheet, Text, View, Font, PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumeData } from '../ResumeData';
 
 Font.register({
@@ -140,69 +140,77 @@ export const ResumePdf: FC = () => {
       </View>
     ));
 
-  return (
-    <PDFViewer width="100%" height="1120px">
-      <Document>
-        <Page size="LETTER" style={styles.page} wrap>
-          <View style={styles.article}>
-            <View style={styles.header}>
-              <View style={styles.row}>
-                <View>
-                  <Text style={styles.h2}>{name}</Text>
-                  <Text style={styles.inlineLi}>{email}</Text>
-                  <Text style={styles.inlineLi}>{location}</Text>
-                </View>
-                <View>
-                  <Text>{links.github}</Text>
-                  <Text>{links.linkedin}</Text>
-                  <Text>{links.website}</Text>
+  const ResumePdfDocument = () => (
+    <Document>
+      <Page size="LETTER" style={styles.page} wrap>
+        <View style={styles.article}>
+          <View style={styles.header}>
+            <View style={styles.row}>
+              <View>
+                <Text style={styles.h2}>{name}</Text>
+                <Text style={styles.inlineLi}>{email}</Text>
+                <Text style={styles.inlineLi}>{location}</Text>
+              </View>
+              <View>
+                <Text>{links.github}</Text>
+                <Text>{links.linkedin}</Text>
+                <Text>{links.website}</Text>
+              </View>
+            </View>
+            <Text>{summary}</Text>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h3}>Skills</Text>
+            {skills.map((e, key) => (
+              <View key={`${key}-${e.title}`}>
+                <Text style={styles.h4}>{e.title}</Text>
+                <View style={styles.inlineList}>
+                  {e.values.map((s, key) => (
+                    <Text style={styles.inlineLi} key={`${key}-${s}`}>
+                      {s}
+                    </Text>
+                  ))}
                 </View>
               </View>
-              <Text>{summary}</Text>
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.h3}>Skills</Text>
-              {skills.map((e, key) => (
-                <View key={`${key}-${e.title}`}>
-                  <Text style={styles.h4}>{e.title}</Text>
-                  <View style={styles.inlineList}>
-                    {e.values.map((s, key) => (
-                      <Text style={styles.inlineLi} key={`${key}-${s}`}>
-                        {s}
-                      </Text>
-                    ))}
-                  </View>
-                </View>
-              ))}
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.h3}>Education</Text>
-              {education.map((e, key) => (
-                <View key={`${key}-${e.school}`}>
-                  <Text style={styles.h4}>{e.school}</Text>
-                  <View style={styles.row}>
-                    <Text style={styles.h5}>{e.degree}</Text>
-                    <Text>{`${e.start} - ${e.end}`}</Text>
-                  </View>
-                </View>
-              ))}
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.h3}>Experience</Text>
-              {ViewMapper(experience)}
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.h3}>Professional Associations</Text>
-              {ViewMapper(associations)}
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.h3}>Volunteer Work</Text>
-              {ViewMapper(volunteer)}
-            </View>
+            ))}
           </View>
-        </Page>
-      </Document>
-    </PDFViewer>
+          <View style={styles.section}>
+            <Text style={styles.h3}>Education</Text>
+            {education.map((e, key) => (
+              <View key={`${key}-${e.school}`}>
+                <Text style={styles.h4}>{e.school}</Text>
+                <View style={styles.row}>
+                  <Text style={styles.h5}>{e.degree}</Text>
+                  <Text>{`${e.start} - ${e.end}`}</Text>
+                </View>
+              </View>
+            ))}
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h3}>Experience</Text>
+            {ViewMapper(experience)}
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h3}>Professional Associations</Text>
+            {ViewMapper(associations)}
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h3}>Volunteer Work</Text>
+            {ViewMapper(volunteer)}
+          </View>
+        </View>
+      </Page>
+    </Document>
+  );
+
+  return (
+    <PDFDownloadLink
+      className="btn btn-primary"
+      document={<ResumePdfDocument />}
+      fileName={'test.pdf'}
+    >
+      {({ blob, url, loading, error }) => (loading ? 'Generating Pdf' : 'Download PDF')}
+    </PDFDownloadLink>
   );
 };
 

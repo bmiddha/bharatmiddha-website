@@ -4,7 +4,7 @@ import { ResumeData } from '../ResumeData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faEdge } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-export const ResumeDom: FC = () => {
+export const Resume: FC = () => {
   const {
     name,
     location,
@@ -122,4 +122,4 @@ export const ResumeDom: FC = () => {
   );
 };
 
-export default ResumeDom;
+export default Resume;

@@ -1,14 +1,10 @@
-import React, { FC, useState } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import React, { FC } from 'react';
+import { Row, Col } from 'reactstrap';
 import { Container } from 'reactstrap';
-import ResumeDom from '../components/ResumeDom';
+import Resume from '../components/Resume';
 import ResumePdf from '../components/ResumePdf';
 
 export const ResumePage: FC = () => {
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const [renderPdf, setRenderPdf] = useState<boolean>(
-    urlSearchParams.has('format') && urlSearchParams.get('format') === 'pdf'
-  );
   return (
     <Container>
       <Row className="my-4">
@@ -17,13 +13,13 @@ export const ResumePage: FC = () => {
         </Col>
         <Col>
           <div className="clearfix">
-            <Button className="float-right" onClick={() => setRenderPdf(!renderPdf)}>
-              Render {renderPdf ? 'HTML' : 'PDF'}
-            </Button>
+            <div className="float-right">
+              <ResumePdf />
+            </div>
           </div>
         </Col>
       </Row>
-      {renderPdf ? <ResumePdf /> : <ResumeDom />}
+      <Resume />
     </Container>
   );
 };
