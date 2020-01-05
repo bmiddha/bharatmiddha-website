@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { Row, Col } from 'reactstrap';
 import { ResumeData } from '../ResumeData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faEdge } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 export const ResumeDom: FC = () => {
   const {
     name,
@@ -44,22 +47,38 @@ export const ResumeDom: FC = () => {
   return (
     <article>
       <header>
-        <h2>{name}</h2>
         <Row className="lead">
           <Col>
-            <p className="lead">{summary}</p>
+            <h2>{name}</h2>
+            {summary.map((e, key) => (
+              <p key={key} className="lead">
+                {e}
+              </p>
+            ))}
           </Col>
-          <Col className="text-right">
-            <p>{email}</p>
-            <p>{location}</p>
+          <Col md={'auto'} className="text-right">
             <p>
-              <a href={links.github}>GitHub</a>
+              {location} <FontAwesomeIcon icon={faMapMarkerAlt} />
             </p>
             <p>
-              <a href={links.linkedin}>Linkedin</a>
+              <a href={`mailto:${email}`}>
+                Email <FontAwesomeIcon icon={faEnvelope} />
+              </a>
             </p>
             <p>
-              <a href={links.website}>Website</a>
+              <a href={links.github}>
+                GitHub <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </p>
+            <p>
+              <a href={links.linkedin}>
+                Linkedin <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </p>
+            <p>
+              <a href={links.website}>
+                Website <FontAwesomeIcon icon={faEdge} />
+              </a>
             </p>
           </Col>
         </Row>

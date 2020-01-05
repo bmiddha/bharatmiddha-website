@@ -94,7 +94,7 @@ export const Project: FC<Repository> = props => {
   };
   return (
     <div>
-      <Card className="mt-4" style={{ width: '300px', height: 'calc(100% - 30px)' }}>
+      <Card className="mt-4" style={{ width: '350px', height: 'calc(100% - 30px)' }}>
         <CardBody>
           <CardTitle>
             <CardLink

@@ -2,7 +2,7 @@ export const ResumeData = {
   name: 'Bharat Middha',
   location: 'Chicago, IL',
   email: 'me@bharatmiddha.com',
-  summary: 'Full Stack Developer, DevOps Engineer, Systems Administrator',
+  summary: ['Full Stack Developer', 'DevOps Engineer', 'Systems Administrator'],
   links: {
     github: 'https://github.com/bmiddha',
     linkedin: 'https://linkedin.com/in/bmiddha',
