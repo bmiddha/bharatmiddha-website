@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Row, Col } from 'reactstrap';
 import { ResumeData } from '../ResumeData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faEdge } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faChrome } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 export const Resume: FC = () => {
   const {
@@ -35,7 +35,7 @@ export const Resume: FC = () => {
             <h4>{e.organization ? e.organization : ''}</h4>
             <h5>{e.position ? e.position : ''}</h5>
           </Col>
-          <Col md={'auto'} className="text-right">
+          <Col md={'auto'} className="resume-align-right">
             <h5>{e.location ? e.location : ''}</h5>
             <p>{`${e.start ? e.start : ''} - ${e.end ? e.end : ''}`}</p>
           </Col>
@@ -56,7 +56,7 @@ export const Resume: FC = () => {
               </p>
             ))}
           </Col>
-          <Col md={'auto'} className="text-right">
+          <Col md={'auto'} className="resume-align-right">
             <p>
               {location} <FontAwesomeIcon icon={faMapMarkerAlt} />
             </p>
@@ -77,7 +77,7 @@ export const Resume: FC = () => {
             </p>
             <p>
               <a href={links.website}>
-                Website <FontAwesomeIcon icon={faEdge} />
+                Website <FontAwesomeIcon icon={faChrome} />
               </a>
             </p>
           </Col>

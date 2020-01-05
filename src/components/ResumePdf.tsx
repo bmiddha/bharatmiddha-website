@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { Document, Page, StyleSheet, Text, View, Font, PDFDownloadLink } from '@react-pdf/renderer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { ResumeData } from '../ResumeData';
 
 Font.register({
@@ -205,11 +207,21 @@ export const ResumePdf: FC = () => {
 
   return (
     <PDFDownloadLink
-      className="btn btn-primary"
+      className="btn btn-info"
       document={<ResumePdfDocument />}
       fileName={'test.pdf'}
     >
-      {({ blob, url, loading, error }) => (loading ? 'Generating Pdf' : 'Download PDF')}
+      {({ blob, url, loading, error }) =>
+        loading ? (
+          <>Generating Pdf</>
+        ) : error ? (
+          console.error(error)
+        ) : (
+          <>
+            Download PDF <FontAwesomeIcon icon={faFilePdf} />
+          </>
+        )
+      }
     </PDFDownloadLink>
   );
 };

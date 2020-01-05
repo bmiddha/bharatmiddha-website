@@ -6,13 +6,21 @@
   padding: 0;
 }
 .inline-list > li {
-  display: inline;
+  display: inline-block;
 }
 .inline-list > li::before {
   content: '|';
   padding: 10px;
 }
-.inline-list > li:first-child::before {
-  content: '';
-  padding: 0;
+.inline-list > li:last-child::after {
+  content: '|';
+  padding: 10px;
+}
+.resume-align-right {
+  text-align: left !important;
+}
+@media (min-width: 768px) {
+  .resume-align-right {
+    text-align: right !important;
+  }
 }
