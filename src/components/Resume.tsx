@@ -93,7 +93,7 @@ export const Resume: FC<ResumeProps> = ({ data }) => {
         </Row>
       </header>
       <section className="border-top pt-4">
-        <h3>Skills</h3>
+        <h3 className="mb-4">Skills</h3>
         {skills.map((e, key) => (
           <div key={`${key}-${e.title}`}>
             <h4>{e.title}</h4>
@@ -106,7 +106,7 @@ export const Resume: FC<ResumeProps> = ({ data }) => {
         ))}
       </section>
       <section className="border-top pt-4">
-        <h3>Education</h3>
+        <h3 className="mb-4">Education</h3>
         {education.map((e, key) => (
           <div key={`${key}-${e.school}`}>
             <h4>{e.school}</h4>
@@ -116,15 +116,15 @@ export const Resume: FC<ResumeProps> = ({ data }) => {
         ))}
       </section>
       <section className="border-top pt-4">
-        <h3>Experience</h3>
+        <h3 className="mb-4">Experience</h3>
         {sectionMapper(experience)}
       </section>
       <section className="border-top pt-4">
-        <h3>Professional Associations</h3>
+        <h3 className="mb-4">Professional Associations</h3>
         {sectionMapper(associations)}
       </section>
       <section className="border-top pt-4">
-        <h3>Volunteer Work</h3>
+        <h3 className="mb-4">Volunteer Work</h3>
         {sectionMapper(volunteer)}
       </section>
     </article>
