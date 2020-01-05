@@ -118,7 +118,7 @@ export const Project: FC<Repository> = props => {
               <FontAwesomeIcon icon={faEye} /> {props.watchers_count}
             </CardLink>
             <CardLink>{props.language}</CardLink>
-            {props.homepage ? (
+            {props?.homepage ? (
               <>
                 <CardLink href={props.homepage} target="_blank" rel="noopener noreferrer">
                   Website

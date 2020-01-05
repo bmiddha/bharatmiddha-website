@@ -1,9 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
 import Project, { Repository } from './Project';
-import { CardDeck } from 'reactstrap';
+import { CardDeck, Spinner } from 'reactstrap';
 
 export const ProjectsList: FC = () => {
-  const [repos, setRepos] = useState<Repository[]>([]);
+  const [repos, setRepos] = useState<Repository[]>();
 
   useEffect(() => {
     fetch('https://api.github.com/users/bmiddha/repos?type=all&sort=updated&per_page=20')
@@ -12,10 +12,13 @@ export const ProjectsList: FC = () => {
       .catch(console.error);
   }, []);
 
-  return (
+  return repos ? (
     <>
       <p className="lead">
-        Data fetched from <a href="https://developer.github.com/v3/">GitHub API.</a>
+        Data fetched from{' '}
+        <a href="https://developer.github.com/v3/" target="_blank" rel="noopener noreferrer">
+          GitHub API.
+        </a>
       </p>
       <CardDeck>
         {repos.map((e, key) => (
@@ -23,6 +26,10 @@ export const ProjectsList: FC = () => {
         ))}
       </CardDeck>
     </>
+  ) : (
+    <div className="d-flex align-items-center">
+      <Spinner className="mr-2" type="grow" />
+    </div>
   );
 };
 

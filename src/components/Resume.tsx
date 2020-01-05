@@ -1,10 +1,15 @@
 import React, { FC } from 'react';
 import { Row, Col } from 'reactstrap';
-import { ResumeData } from '../ResumeData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faChrome } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-export const Resume: FC = () => {
+import { ResumeData } from '../models/ResumeData';
+
+export type ResumeProps = {
+  data: ResumeData;
+};
+
+export const Resume: FC<ResumeProps> = ({ data }) => {
   const {
     name,
     location,
@@ -16,7 +21,7 @@ export const Resume: FC = () => {
     experience,
     volunteer,
     associations
-  } = ResumeData;
+  } = data;
 
   type OrgSection = {
     organization?: string;
@@ -32,15 +37,19 @@ export const Resume: FC = () => {
       <div key={`${key}-${e.organization}`}>
         <Row>
           <Col>
-            <h4>{e.organization ? e.organization : ''}</h4>
-            <h5>{e.position ? e.position : ''}</h5>
+            <h4>{e?.organization}</h4>
+            <h5>{e?.position}</h5>
           </Col>
           <Col lg={'auto'} className="resume-align-right">
-            <h5>{e.location ? e.location : ''}</h5>
-            <p>{`${e.start ? e.start : ''} - ${e.end ? e.end : ''}`}</p>
+            <h5>{e?.location}</h5>
+            <p>{`${e?.start} - ${e?.end}`}</p>
           </Col>
         </Row>
-        <ul>{e.points ? e.points.map((s, key) => <li key={`${key}-${s}`}>{s}</li>) : <></>}</ul>
+        <ul>
+          {e?.points?.map((s, key) => (
+            <li key={`${key}-${s}`}>{s}</li>
+          ))}
+        </ul>
       </div>
     ));
 
@@ -61,22 +70,22 @@ export const Resume: FC = () => {
               {location} <FontAwesomeIcon icon={faMapMarkerAlt} />
             </p>
             <p>
-              <a href={`mailto:${email}`}>
+              <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
                 Email <FontAwesomeIcon icon={faEnvelope} />
               </a>
             </p>
             <p>
-              <a href={links.github}>
+              <a href={links.github} target="_blank" rel="noopener noreferrer">
                 GitHub <FontAwesomeIcon icon={faGithub} />
               </a>
             </p>
             <p>
-              <a href={links.linkedin}>
+              <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
                 Linkedin <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </p>
             <p>
-              <a href={links.website}>
+              <a href={links.website} target="_blank" rel="noopener noreferrer">
                 Website <FontAwesomeIcon icon={faChrome} />
               </a>
             </p>

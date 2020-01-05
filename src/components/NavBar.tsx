@@ -11,7 +11,7 @@ export const NavBar: FC = () => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar color="light" light expand="lg">
         <NavbarBrand tag={Link} exact to="/" activeClassName="active">
           <img src="/images/logo120.png" height="35px" alt="logo" />
         </NavbarBrand>

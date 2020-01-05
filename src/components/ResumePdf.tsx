@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Document, Page, StyleSheet, Text, View, Font, PDFDownloadLink } from '@react-pdf/renderer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
-import { ResumeData } from '../ResumeData';
+import { ResumeProps } from './Resume';
 
 Font.register({
   family: 'Roboto',
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export const ResumePdf: FC = () => {
+export const ResumePdf: FC<ResumeProps> = ({ data }) => {
   const {
     name,
     location,
@@ -106,7 +106,7 @@ export const ResumePdf: FC = () => {
     experience,
     volunteer,
     associations
-  } = ResumeData;
+  } = data;
 
   type OrgSection = {
     organization?: string;
@@ -121,23 +121,19 @@ export const ResumePdf: FC = () => {
     sectionKey.map((e, key) => (
       <View style={styles.organization} key={`${key}-${e.organization}`}>
         <View style={styles.row}>
-          <Text style={styles.h4}>{e.organization ? e.organization : ''}</Text>
-          <Text style={styles.h5}>{e.location ? e.location : ''}</Text>
+          <Text style={styles.h4}>{e?.organization}</Text>
+          <Text style={styles.h5}>{e?.location}</Text>
         </View>
         <View style={styles.row}>
-          <Text style={styles.h5}>{e.position ? e.position : ''}</Text>
-          <Text>{`${e.start ? e.start : ''} - ${e.end ? e.end : ''}`}</Text>
+          <Text style={styles.h5}>{e?.position}</Text>
+          <Text>{`${e?.start} - ${e?.end}`}</Text>
         </View>
         <View style={styles.list}>
-          {e.points ? (
-            e.points.map((s, key) => (
-              <Text style={styles.li} key={`${key}-${s}`}>
-                {s}
-              </Text>
-            ))
-          ) : (
-            <></>
-          )}
+          {e?.points?.map((s, key) => (
+            <Text style={styles.li} key={`${key}-${s}`}>
+              {s}
+            </Text>
+          ))}
         </View>
       </View>
     ));
