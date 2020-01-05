@@ -2,10 +2,8 @@
 
 # bharatmiddha-website
 
-[![Release](https://img.shields.io/website?label=release&url=https%3A%2F%2Fbharatmiddha.com%2F)](https://bharatmiddha.com)
-[![node-ci](https://img.shields.io/github/workflow/status/bmiddha/bharatmiddha-website/node-ci?label=node-ci)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3A%22node-ci%22)
-[![docker-cd-master](https://img.shields.io/github/workflow/status/bmiddha/bharatmiddha-website/docker-cd-master?label=build:%20docker-cd-master)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3A%22docker-cd-master%22)
-[![License](https://img.shields.io/github/license/bmiddha/bharatmiddha-website)](https://github.com/bmiddha/bharatmiddha-website/blob/master/LICENSE)
+[![GitHub Actions](https://github.com/bmiddha/bharatmiddha-website/workflows/Node%20CI/badge.svg?branch=master&event=push)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3A"Node+CI")
+[![GitHub Actions](https://github.com/bmiddha/bharatmiddha-website/workflows/docker-cd-master/badge.svg?branch=master&event=push)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3Adocker-cd-master)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b05cf272-4fc5-4726-8648-4d76c36c1cce/deploy-status)](https://app.netlify.com/sites/optimistic-spence-a21275/deploys)
 
