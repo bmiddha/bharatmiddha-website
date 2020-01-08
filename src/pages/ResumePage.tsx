@@ -21,7 +21,7 @@ export const ResumePage: FC = () => {
         </Col>
         <Col>
           <div className="resume-align-right">
-            {data ? (
+            {data && !genPdf ? (
               <Button color="info" onClick={() => setGenPdf(!genPdf)}>
                 Generate PDF <FontAwesomeIcon icon={faFilePdf} />
               </Button>
