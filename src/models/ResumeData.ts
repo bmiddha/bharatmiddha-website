@@ -8,6 +8,8 @@ type EducationSchool = {
   degree: string;
   start: string;
   end: string;
+  gpa: string;
+  coursework: string[];
 };
 
 type Organization = {
@@ -16,6 +18,13 @@ type Organization = {
   position: string;
   start: string;
   end: string;
+  points: string[];
+};
+
+type Project = {
+  name: string;
+  link: string;
+  technologies: string[];
   points: string[];
 };
 
@@ -34,6 +43,7 @@ export type ResumeData = {
   experience: Organization[];
   volunteer: Organization[];
   associations: Organization[];
+  projects: Project[];
 };
 
 export default ResumeData;

@@ -30,9 +30,10 @@ Font.register({
 const styles = StyleSheet.create({
   page: {
     display: 'flex',
-    fontSize: '11pt',
+    fontSize: '10pt',
     fontFamily: 'Roboto',
-    padding: 10
+    paddingVertical: 15,
+    paddingHorizontal: 20
   },
   section: {
     flexGrow: 1,
@@ -45,31 +46,37 @@ const styles = StyleSheet.create({
   organization: {},
   h1: {
     fontSize: '15pt',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 2
   },
   h2: {
     fontSize: '14pt',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 2
   },
   h3: {
     fontSize: '13pt',
     fontWeight: 'bold',
-    borderBottom: 1
+    borderBottom: 1,
+    marginBottom: 2
   },
   h4: {
     fontSize: '12pt',
     fontWeight: 'bold',
-    textDecoration: 'underline'
+    textDecoration: 'underline',
+    marginBottom: 2
   },
   h5: {
     fontSize: '11pt',
     fontWeight: 'bold',
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    marginBottom: 2
   },
   h6: {
     fontSize: '11pt',
     fontWeight: 'bold',
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    marginBottom: 2
   },
   inlineList: {
     display: 'flex',
@@ -91,6 +98,12 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     display: 'flex',
     flexGrow: 1
+  },
+  links: {
+    textAlign: 'right',
+    display: 'flex',
+    flexGrow: 1,
+    marginRight: '110px'
   }
 });
 
@@ -105,7 +118,8 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
     education,
     experience,
     volunteer,
-    associations
+    associations,
+    projects
   } = data;
 
   type OrgSection = {
@@ -146,16 +160,23 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
             <View style={styles.row}>
               <View>
                 <Text style={styles.h2}>{name}</Text>
-                <Text style={styles.inlineLi}>{email}</Text>
-                <Text style={styles.inlineLi}>{location}</Text>
+                <Text>{email}</Text>
+                <Text>{location}</Text>
               </View>
-              <View>
+              <View style={styles.links}>
                 <Text>{links.github}</Text>
                 <Text>{links.linkedin}</Text>
                 <Text>{links.website}</Text>
               </View>
             </View>
-            <Text>{summary}</Text>
+            <Text>
+              {summary.map((e, key) => (
+                <>
+                  {e}
+                  {key < summary.length - 1 ? '  |  ' : ''}
+                </>
+              ))}
+            </Text>
           </View>
           <View style={styles.section}>
             <Text style={styles.h3}>Skills</Text>
@@ -164,8 +185,9 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
                 <Text style={styles.h4}>{e.title}</Text>
                 <View style={styles.inlineList}>
                   {e.values.map((s, key) => (
-                    <Text style={styles.inlineLi} key={`${key}-${s}`}>
+                    <Text key={`${key}-${s}`}>
                       {s}
+                      {key < e.values.length - 1 ? '  |  ' : ''}
                     </Text>
                   ))}
                 </View>
@@ -176,10 +198,24 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
             <Text style={styles.h3}>Education</Text>
             {education.map((e, key) => (
               <View key={`${key}-${e.school}`}>
-                <Text style={styles.h4}>{e.school}</Text>
+                <View style={styles.row}>
+                  <Text style={styles.h4}>{e.school}</Text>
+                  <Text>{`${e.start} - ${e.end}`}</Text>
+                </View>
                 <View style={styles.row}>
                   <Text style={styles.h5}>{e.degree}</Text>
-                  <Text>{`${e.start} - ${e.end}`}</Text>
+                  <Text>{`GPA: ${e.gpa}`}</Text>
+                </View>
+                <View>
+                  <Text>Relevant Coursework:</Text>
+                  <Text>
+                    {e.coursework.map((s, key) => (
+                      <Text key={`${key}-${s}`}>
+                        {s}
+                        {key < e.coursework.length - 1 ? '  |  ' : ''}
+                      </Text>
+                    ))}
+                  </Text>
                 </View>
               </View>
             ))}
@@ -189,12 +225,38 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
             {ViewMapper(experience)}
           </View>
           <View style={styles.section}>
+            <Text style={styles.h3}>Volunteer Work</Text>
+            {ViewMapper(volunteer)}
+          </View>
+          <View style={styles.section} break>
             <Text style={styles.h3}>Professional Associations</Text>
             {ViewMapper(associations)}
           </View>
           <View style={styles.section}>
-            <Text style={styles.h3}>Volunteer Work</Text>
-            {ViewMapper(volunteer)}
+            <Text style={styles.h3}>Featured Projects</Text>
+            {projects.map((e, key) => (
+              <View key={key}>
+                <View style={styles.row}>
+                  <Text style={styles.h4}>{e.name}</Text>
+                  <Text>{e.link}</Text>
+                </View>
+                <View style={styles.inlineList}>
+                  {e.technologies.map((s, key) => (
+                    <Text key={`${key}-${s}`}>
+                      {s}
+                      {key < e.technologies.length - 1 ? '  |  ' : ''}
+                    </Text>
+                  ))}
+                </View>
+                <View style={styles.list}>
+                  {e?.points?.map((s, key) => (
+                    <Text style={styles.li} key={`${key}-${s}`}>
+                      {s}
+                    </Text>
+                  ))}
+                </View>
+              </View>
+            ))}
           </View>
         </View>
       </Page>
