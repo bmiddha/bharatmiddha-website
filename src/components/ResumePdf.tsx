@@ -145,7 +145,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
         <View style={styles.list}>
           {e?.points?.map((s, key) => (
             <Text style={styles.li} key={`${key}-${s}`}>
-              {s}
+              - {s}
             </Text>
           ))}
         </View>
@@ -251,7 +251,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
                 <View style={styles.list}>
                   {e?.points?.map((s, key) => (
                     <Text style={styles.li} key={`${key}-${s}`}>
-                      {s}
+                      - {s}
                     </Text>
                   ))}
                 </View>
