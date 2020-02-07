@@ -204,7 +204,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.h5}>{e.degree}</Text>
-                  <Text>{`GPA: ${e.gpa}`}</Text>
+                  <Text>{e.gpa? `GPA: ${e.gpa}`: ''}</Text>
                 </View>
                 <View>
                   <Text>Relevant Coursework:</Text>
@@ -267,7 +267,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
     <PDFDownloadLink
       className="btn btn-info"
       document={<ResumePdfDocument />}
-      fileName={'test.pdf'}
+      fileName={'bharat-middha-resume.pdf'}
     >
       {({ blob, url, loading, error }) =>
         loading ? (
