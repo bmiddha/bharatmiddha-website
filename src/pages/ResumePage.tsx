@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import Resume from '../components/Resume';
 import ResumePdf from '../components/ResumePdf';
+import { ResumeData } from '../models/ResumeData';
 
 export const ResumePage: FC = () => {
   const [genPdf, setGenPdf] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState<ResumeData>();
   useEffect(() => {
     const fetchData = async () =>
-      setData(await (await fetch('https://api.bharatmiddha.com/rest/resume')).json());
+      setData(await (await fetch('https://api.bmiddha.com/rest/resume')).json());
     fetchData();
   }, []);
   return (
@@ -25,7 +26,7 @@ export const ResumePage: FC = () => {
               <Button color="info" onClick={() => setGenPdf(!genPdf)}>
                 Generate PDF <FontAwesomeIcon icon={faFilePdf} />
               </Button>
-            ) : genPdf ? (
+            ) : data && genPdf ? (
               <ResumePdf data={data} />
             ) : (
               <></>

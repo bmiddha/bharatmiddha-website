@@ -33,21 +33,6 @@ export const NavBar: FC = () => {
                 Resume
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/about" activeClassName="active" className="wack">
-                About
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/downloads" activeClassName="active" className="wack">
-                Downloads
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/blog" activeClassName="active" className="wack">
-                Blog
-              </NavLink>
-            </NavItem>
           </Nav>
           <Nav navbar className="ml-auto">
             <NavItem>

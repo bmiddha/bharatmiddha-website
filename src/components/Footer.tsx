@@ -5,7 +5,7 @@ import { faHeart, faCode } from '@fortawesome/free-solid-svg-icons';
 
 export const Footer: FC = () => {
   return (
-    <footer className="page-footer mt-4">
+    <footer className="page-footer">
       <div className="copyright text-center bg-dark text-white py-4">
         <p>
           <FontAwesomeIcon icon={faCode} /> with <FontAwesomeIcon icon={faHeart} /> |{' '}
