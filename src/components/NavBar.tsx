@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { NavLink as Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -12,26 +12,28 @@ export const NavBar: FC = () => {
   return (
     <div>
       <Navbar color="light" light expand="lg">
-        <NavbarBrand tag={Link} exact to="/" activeClassName="active">
-          <img src="/images/logo120.png" height="35px" alt="logo" />
-        </NavbarBrand>
+        <Link href="/">
+          <NavbarBrand>
+            <img src="/images/logo120.png" height="35px" alt="logo" />
+          </NavbarBrand>
+        </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav navbar className="mr-auto">
             <NavItem>
-              <NavLink tag={Link} exact to="/" activeClassName="active" className="wack">
-                Home
-              </NavLink>
+              <Link href="/">
+                <NavLink className="wack">Home</NavLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/projects" activeClassName="active" className="wack">
-                Projects
-              </NavLink>
+              <Link href="/projects">
+                <NavLink className="wack">Projects</NavLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/resume" activeClassName="active" className="wack">
-                Resume
-              </NavLink>
+              <Link href="/resume">
+                <NavLink className="wack">Resume</NavLink>
+              </Link>
             </NavItem>
           </Nav>
           <Nav navbar className="ml-auto">
