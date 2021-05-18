@@ -155,7 +155,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
   const ResumePdfDocument = () => (
     <Document>
       <Page size="LETTER" style={styles.page} wrap>
-        <View style={styles.article}>
+        <View>
           <View style={styles.header}>
             <View style={styles.row}>
               <View>
