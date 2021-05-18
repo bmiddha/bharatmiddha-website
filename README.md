@@ -5,8 +5,6 @@
 [![GitHub Actions](https://github.com/bmiddha/bharatmiddha-website/workflows/Node%20CI/badge.svg?branch=main&event=push)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3A"Node+CI")
 [![GitHub Actions](https://github.com/bmiddha/bharatmiddha-website/workflows/docker-cd-main/badge.svg?branch=main&event=push)](https://github.com/bmiddha/bharatmiddha-website/actions?query=workflow%3Adocker-cd-main)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b05cf272-4fc5-4726-8648-4d76c36c1cce/deploy-status)](https://app.netlify.com/sites/bharatmiddha-website/deploys)
-
 Personal website for [Bharat Middha](https://github.com/bmiddha).
 
 ## Getting Started
