@@ -20,5 +20,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
+  ],
+  "cSpell.words": [
+    "Chakra"
   ]
 }
