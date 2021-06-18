@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "editor.rulers": [100],
+  "editor.rulers": [80],
   "files.eol": "\n",
   "editor.tabSize": 2,
   "[yaml]": {
@@ -21,7 +21,8 @@
     "typescript",
     "typescriptreact"
   ],
-  "cSpell.words": [
-    "Chakra"
-  ]
+  "cSpell.words": ["Chakra"],
+  "files.associations": {
+    "*.ejs.t": "html"
+  }
 }
