@@ -8,23 +8,23 @@ Font.register({
   family: 'Roboto',
   fonts: [
     {
-      src: `/fonts/Roboto-Regular.ttf`
+      src: `/fonts/Roboto-Regular.ttf`,
     },
     {
       src: `/fonts/Roboto-Bold.ttf`,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
     },
     {
       src: `/fonts/Roboto-Italic.ttf`,
       fontWeight: 'normal',
-      fontStyle: 'italic'
+      fontStyle: 'italic',
     },
     {
       src: `/fonts/Roboto-BoldItalic.ttf`,
       fontWeight: 'bold',
-      fontStyle: 'italic'
-    }
-  ]
+      fontStyle: 'italic',
+    },
+  ],
 });
 
 const styles = StyleSheet.create({
@@ -33,58 +33,58 @@ const styles = StyleSheet.create({
     fontSize: '10pt',
     fontFamily: 'Roboto',
     paddingVertical: 15,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   section: {
     flexGrow: 1,
-    marginBottom: 5
+    marginBottom: 5,
   },
   header: {
     flexGrow: 1,
-    marginBottom: 5
+    marginBottom: 5,
   },
   organization: {},
   h1: {
     fontSize: '15pt',
     fontWeight: 'bold',
-    marginBottom: 2
+    marginBottom: 2,
   },
   h2: {
     fontSize: '14pt',
     fontWeight: 'bold',
-    marginBottom: 2
+    marginBottom: 2,
   },
   h3: {
     fontSize: '13pt',
     fontWeight: 'bold',
     borderBottom: 1,
-    marginBottom: 2
+    marginBottom: 2,
   },
   h4: {
     fontSize: '12pt',
     fontWeight: 'bold',
     textDecoration: 'underline',
-    marginBottom: 2
+    marginBottom: 2,
   },
   h5: {
     fontSize: '11pt',
     fontWeight: 'bold',
     fontStyle: 'italic',
-    marginBottom: 2
+    marginBottom: 2,
   },
   h6: {
     fontSize: '11pt',
     fontWeight: 'bold',
     fontStyle: 'italic',
-    marginBottom: 2
+    marginBottom: 2,
   },
   inlineList: {
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   inlineLi: {
-    marginRight: 5
+    marginRight: 5,
   },
   list: {},
   li: {},
@@ -92,19 +92,19 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   textAlignRight: {
     textAlign: 'right',
     display: 'flex',
-    flexGrow: 1
+    flexGrow: 1,
   },
   links: {
     textAlign: 'right',
     display: 'flex',
     flexGrow: 1,
-    marginRight: '110px'
-  }
+    marginRight: '0px',
+  },
 });
 
 export const ResumePdf: FC<ResumeProps> = ({ data }) => {
@@ -119,7 +119,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
     experience,
     volunteer,
     associations,
-    projects
+    projects,
   } = data;
 
   type OrgSection = {
@@ -204,7 +204,7 @@ export const ResumePdf: FC<ResumeProps> = ({ data }) => {
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.h5}>{e.degree}</Text>
-                  <Text>{e.gpa? `GPA: ${e.gpa}`: ''}</Text>
+                  <Text>{e.gpa ? `GPA: ${e.gpa}` : ''}</Text>
                 </View>
                 <View>
                   <Text>Relevant Coursework:</Text>
