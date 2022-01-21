@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,26 +13,26 @@ export const NavBar: FC = () => {
   return (
     <div>
       <Navbar color="light" light expand="lg">
-        <Link href="/">
+        <Link href="/" passHref>
           <NavbarBrand>
-            <img src="/images/logo120.png" height="35px" alt="logo" />
+            <Image layout="fixed" src="/images/logo120.png" height={35} width={35} alt="logo" />
           </NavbarBrand>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav navbar className="mr-auto">
             <NavItem>
-              <Link href="/">
+              <Link href="/" passHref>
                 <NavLink className="wack">Home</NavLink>
               </Link>
             </NavItem>
             <NavItem>
-              <Link href="/projects">
+              <Link href="/projects" passHref>
                 <NavLink className="wack">Projects</NavLink>
               </Link>
             </NavItem>
             <NavItem>
-              <Link href="/resume">
+              <Link href="/resume" passHref>
                 <NavLink className="wack">Resume</NavLink>
               </Link>
             </NavItem>
