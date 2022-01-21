@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .next
+
+# next export output
+/out
+
+# typescript incremental build info
+tsconfig.tsbuildinfo

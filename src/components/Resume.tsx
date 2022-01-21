@@ -20,7 +20,7 @@ export const Resume: FC<ResumeProps> = ({ data }) => {
     education,
     experience,
     volunteer,
-    associations
+    associations,
   } = data;
 
   type OrgSection = {
@@ -40,7 +40,7 @@ export const Resume: FC<ResumeProps> = ({ data }) => {
             <h4>{e?.organization}</h4>
             <h5>{e?.position}</h5>
           </Col>
-          <Col lg={'auto'} className="resume-align-right">
+          <Col md={'auto'} className="resume-align-right">
             <h5>{e?.location}</h5>
             <p>{`${e?.start} - ${e?.end}`}</p>
           </Col>

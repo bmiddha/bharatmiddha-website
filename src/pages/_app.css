@@ -17,7 +17,7 @@
   padding-left: 0;
 }
 .resume-align-right {
-  text-align: left !important;
+  text-align: left;
 }
 html {
   position: relative;
@@ -33,6 +33,6 @@ body {
 }
 @media (min-width: 768px) {
   .resume-align-right {
-    text-align: right !important;
+    text-align: right;
   }
 }
