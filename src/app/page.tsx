@@ -6,7 +6,7 @@ export default function Home() {
       <div className="z-10 w-full max-w-5xl items-center flex-col text-center font-mono text-sm lg:flex">
         {/* round image */}
         <div className="relative w-32 h-32 overflow-hidden rounded-full m-auto">
-          <Image src="/penguin-avatar.jpg" alt="" role="presentation" height={300} width={300} className='' />
+          <Image src="/penguin-avatar.jpg" alt="" role="presentation" height={300} width={300} />
         </div>
         <h1 className='text-2xl mb-4'>Hi internet! I&apos;m Bharat.</h1>
         <p>you found me :&#41;</p>
