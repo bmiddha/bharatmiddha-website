@@ -11,7 +11,7 @@ export default function Home() {
         <h1 className='text-2xl mb-4'>Hi internet! I&apos;m Bharat.</h1>
         <p>you found me :&#41;</p>
       </div>
-      <div className="mb-32 text-center lg:mb-0 lg:text-left flex-col">
+      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-1 lg:text-left flex-col">
         <a
           href="https://github.com/bmiddha"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
